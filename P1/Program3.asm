@@ -1,7 +1,7 @@
 # Compute first twelve Fibonacci numbers and put in array, then print
 ################### Data segment ###################
 .data
-prompt: .asciiz     "Please enter the length of the fibonacci sequence:\n"
+prompt: .asciiz     "Please enter the length of the fibonacci sequence (must be between 1-25):\n"
         .data
 fibs:   .word   0 : 25        # "array" of 25 words to contain fib values
 #removed size variable
