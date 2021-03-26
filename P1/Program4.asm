@@ -1,7 +1,8 @@
 # Compute first twelve Fibonacci numbers and put in array, then print
 ################### Data segment ###################
 .data
-prompt: .asciiz     "Please enter the length of the fibonacci sequence:\n"
+inprompt: .asciiz     "Please enter the length of the fibonacci sequence:\n"
+inprompt2: .asciiz "Error\n"
         .data
 fibs:   .word   0 : 25        # "array" of 25 words to contain fib values
 #removed size variable
@@ -9,20 +10,24 @@ fibs:   .word   0 : 25        # "array" of 25 words to contain fib values
 .text
 .globl main #added main
 main:
-      la   $a0, prompt      # display the prompt
+      la   $a0, inprompt      # display the prompt
       li   $v0,4
       syscall
       li    $v0,5           # take the size of the array from the user (sequence number)
       syscall
+      la $t6, 60
+      slt $t5,$v0,$t6
+      la  $a0, inprompt2
+      syscall 
 #loop:
-     cmp    $v0, 60      
+     #cmp    $v0, 60      
      # jal     Less  
      # move    $t5, $v0    
      # jmp    Both            
     # Less: 
      #la $a0, prompt  
      #syscall
-      #move  $t5, $v0        #move userinput int $t5
+     #move  $t5, $v0        #move userinput int $t5
                             #deleted unused variables related to size
 #main:
       la   $t0, fibs        # load address of array
