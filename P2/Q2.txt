@@ -5,7 +5,7 @@ int test()
 {
 __asm {
 mov al,gArray al = 9 
-lea esi,gArray esi= 1089536 (changes)
+lea esi,gArray esi= 2531328
 mov dl, byte ptr [esi] dl = 9
 mov edx, dword ptr [esi+2] edx= 2890405978
 mov al,gArray[5] al = 172
