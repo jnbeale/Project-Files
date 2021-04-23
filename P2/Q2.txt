@@ -4,23 +4,23 @@ int gArrayI[] = { 0x09, 0xFA, 0x5A, 0x18, 0x48, 0xAC, 0xD4, 0x71 };
 int test()
 {
 __asm {
-mov al,gArray al = decimal:9 , hex: CCCC0009 
-lea esi,gArray esi= 237568 (value varies), hex: 0003A000
-mov dl, byte ptr [esi] dl = decimal: 00000009 , hex: 00000009 
-mov edx, dword ptr [esi+2] edx= 2890405978, hex: AC48185A (value varies)
-mov al,gArray[5] al = 172, hex: AC
+mov al,gArray al = 09 , HEX/EAX: CCCCCC09 
+lea esi,gArray esi= 237568 (value varies), HEX: 0003A000 | Ravinder: HEX: 004D6000
+mov dl, byte ptr [esi] dl = 09 , HEX/EDX: 00000009 
+mov edx, dword ptr [esi+2] edx = 2890405978, HEX: AC48185A (value varies) | Ravinder: HEX:AC48185A
+mov al,gArray[5] al = 172, HEX/EAX: CCCCCCAC
 nop
-mov ax,gArraySI ax = decimal:0009 , hex: 0009
-lea esi,gArraySI esi= 237576 (value varies), hex:0003A008
-mov dl, byte ptr [esi] dl = decimal:09, hex:09
-mov edx, dword ptr [esi+2] edx= 5898490 (value varies), hex: 005A00FA
-mov ax,gArraySI[5] ax = 6144 (value varies), hex: CCCC1800
+mov ax,gArraySI ax = 0009 , HEX/EAX: CCCC0009
+lea esi,gArraySI esi= 237576 (value varies), HEX:0003A008 | Ravinder: HEX:004D6008
+mov dl, byte ptr [esi] dl = 09, EDX:AC481809
+mov edx, dword ptr [esi+2] edx= 5898490, HEX: 005A00FA
+mov ax,gArraySI[5] ax = 6144, HEX/EAX: CCCC1800
 nop
-mov eax,gArrayI eax= decimal: 00000009, hex: 00000009
-lea esi,gArrayI esi= 237592 (value varies), hex:0003A018
-mov dl, byte ptr [esi] dl = decimal:09 , hex: 09 
-mov edx, dword ptr [esi+2] edx= 16384000 (value varies), hex: 00FA0000
-mov eax,gArrayI[5] eax= 1509949440 (value varies), hex: 5A000000
+mov eax,gArrayI eax= 00000009, HEX: 00000009
+lea esi,gArrayI esi= 237592 (value varies), HEX:0003A018 | Ravinder: HEX:004D6018
+mov dl, byte ptr [esi] dl = 09 , EDX: 005A0009  
+mov edx, dword ptr [esi+2] edx= 16384000, HEX: 00FA0000
+mov eax,gArrayI[5] eax= 1509949440, HEX: 5A000000
 nop
 }
 return 0;
