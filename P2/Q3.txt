@@ -1,0 +1,21 @@
+0x08048394 <func1+0>: push %ebp
+0x08048395 <func1+1>: mov %esp,%ebp
+0x08048397 <func1+3>: sub $0x10,%esp
+0x0804839a <func1+6>: mov %ebx,(%esp)
+0x0804839d <func1+9>: mov %esi,0x4(%esp)
+0x080483a1 <func1+13>: mov 0x8(%ebp),%edx       %edx:3
+0x080483a4 <func1+16>: mov 0xc(%ebp), %ecx      %ecx:-1073744320
+0x080483a7 <func1+19>: mov (%ecx,%edx,4),%eax   %eax:4
+0x080483aa <func1+22>: mov 0x10(%ebp),%ebx      %ebx: -1073744340 (did not execute)
+0x080483ad <func1+25>: mov (%ebx,%edx,4),%esi   %esi:16
+0x080483b0 <func1+28>: cmp %esi,%eax            %eax:4
+0x080483b2 <func1+30>: jle 0x80483b9 <func1+37>
+0x080483b4 <func1+32>: mov %eax,(%ebx,%edx,4)   (%ebx,%edx,4):4
+0x080483b7 <func1+35>: jmp 0x80483be <func1+42>
+0x080483b9 <func1+37>: mov %esi,(%ecx,%edx,4)   (%ecx,%edx,4):4
+0x080483bc <func1+40>: mov %esi,%eax             %eax:16
+0x080483be <func1+42>: pop %ebx
+0x080483bf <func1+43>: pop %esi
+0x080483c0 <func1+44>: add $0x8,%esp
+0x080483c3 <func1+47>: leave
+0x080483c4 <func1+48>: ret
